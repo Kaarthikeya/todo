@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 
 :root {
-	--color_dark_cyan: rgb(0, 102, 102);
+	--color_dark_cyan: white;
 	--nav_bar_font_size: 1.3rem;
 }
 
@@ -9,16 +9,17 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	z-index: 1;
 }
 
-html {
+body {
 	font-family: "Poppins", sans-serif;
-	background: linear-gradient(lightgreen, lightblue);
+	background: linear-gradient(black, cyan, orange, green);
+	background-repeat: no-repeat;
 }
 
 .main_page {
-	min-height: 600px;
-	background-color: white;
+	min-height: 700px;
 	margin: 30px;
 	border-radius: 30px;
 }
@@ -66,7 +67,7 @@ html {
 .buttons_to_add ul li {
 	padding: 0px 1rem 0 1rem;
 	list-style: none;
-	font-size: 1.2rem;
+	font-size: var(--nav_bar_font_size);
 }
 
 .buttons_to_add ul li a {
@@ -84,6 +85,8 @@ html {
 }
 
 .box_items {
+	text-align: center;
+	padding: 10px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -95,4 +98,23 @@ html {
 	border-radius: 25px;
 	border: none;
 	cursor: pointer;
+}
+
+.new_note {
+	position: relative;
+	right: 0;
+	left: 0;
+	margin-right: auto;
+	margin-left: auto;
+	width: 300px;
+	border-radius: 10px;
+	background-color: lightskyblue;
+	z-index: 2;
+	display: none;
+}
+
+.new_note p {
+	font-style: "Poppins", sans-serif;
+	font-size: 3rem;
+	color: var(--color_dark_cyan);
 }
