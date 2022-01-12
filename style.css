@@ -29,6 +29,7 @@
 	--backgroundTheme: rgb(26, 26, 26);
 	--backgroundHover: rgb(10, 10, 10);
 	--purpleTheme: rgb(111, 85, 145);
+	--boxBackground: rgb(120, 120, 120);
 	--timeDelay: 0.7s;
 }
 
@@ -152,6 +153,29 @@
 	letter-spacing: 1ch;
 }
 
+.notes_frame {
+	min-height: 100vh;
+	width: 100%;
+	padding: 1rem;
+
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.box {
+	width: 200px;
+	height: 200px;
+	border-radius: 10px;
+	background-color: var(--boxBackground);
+
+	margin: 10px;
+}
+
+.box:hover {
+	transition: var(--timeDelay) ease;
+	background-color: var(--backgroundTheme);
+}
+
 /* Resposiveness */
 @media screen and (max-width: 500px) {
 	.main_page {
@@ -161,14 +185,10 @@
 	.navbar {
 		bottom: 0;
 		position: fixed;
-		height: 4rem;
+		height: 5rem;
 		width: 100vw;
 		border-bottom-right-radius: 0;
 		border-top-left-radius: 10px;
-	}
-
-	.navbar:hover .navlinks p {
-		display: none;
 	}
 
 	.navbarcontainer {
@@ -177,6 +197,20 @@
 		height: 4rem;
 		justify-content: space-evenly;
 		transition: var(--timeDelay) ease;
+	}
+
+	.navlinks {
+		display: flex;
+		justify-content: space-evenly;
+	}
+
+	.navbar:hover .navlinks {
+		display: flex;
+		justify-content: space-evenly;
+	}
+
+	.navbar:hover .navlinks p {
+		display: none;
 	}
 
 	.navbar:hover {
