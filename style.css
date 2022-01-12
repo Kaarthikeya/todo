@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap");
 
 * {
 	box-sizing: border-box;
@@ -13,6 +14,8 @@
 }
 
 ::-webkit-scrollbar-track {
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
 	background-color: var(--backgroundTheme);
 }
 
@@ -24,12 +27,13 @@
 :root {
 	font-size: 16px;
 	font-family: "Montserrat", sans-serif;
-
-	--orangeTheme: rgb(255, 100, 73);
+	--orangeTheme: rgb(255, 87, 57);
+	--cyanTheme: rgb(126, 255, 212);
 	--backgroundTheme: rgb(26, 26, 26);
 	--backgroundHover: rgb(10, 10, 10);
-	--purpleTheme: rgb(111, 85, 145);
-	--boxBackground: rgb(120, 120, 120);
+	--purpleTheme: rgb(96, 70, 129);
+	--purpleTextTheme: rgb(174, 153, 197);
+	--boxBackground: rgb(31, 31, 31);
 	--timeDelay: 0.7s;
 }
 
@@ -49,16 +53,18 @@
 	flex-direction: column;
 	align-items: center;
 	height: 70vh;
+	width: inherit;
 }
 
 .navlinks {
-	padding: 2rem;
-	width: 3rem;
+	width: inherit;
 	height: 3rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	border-radius: 10px;
+
+	padding: 2rem 0rem;
 }
 
 .navlinks p {
@@ -72,31 +78,23 @@
 	font-size: 1.5rem;
 }
 
-.navlinks:hover {
-	transition: var(--timeDelay) ease;
-	background-color: var(--backgroundHover);
-}
-
 .navbar:hover {
-	width: 15rem;
 	transition: var(--timeDelay) ease;
+	width: 15rem;
 }
 
 .navbar:hover .navbarcontainer {
-	justify-items: space-evenly;
+	display: flex;
+	width: inherit;
 }
 
 .navbar:hover .navlinks {
-	transition: var(--timeDelay) ease;
+	padding: 2rem 3rem 2rem 2rem;
 	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	width: 15rem;
+	justify-content: space-between;
 }
 
 .navbar:hover .navlinks p {
-	transition: var(--timeDelay) ease;
-	padding: 0px 1.5rem;
 	display: block;
 	color: white;
 }
@@ -124,10 +122,8 @@
 
 .navlinks:nth-child(3):hover .fa-plus {
 	transition: calc(var(--timeDelay)) ease;
-	transform: rotate(180deg);
+	transform: rotate(-180deg);
 }
-
-/* Responsiveness for the nav bar*/
 
 /* Main Page starts now */
 
@@ -159,6 +155,8 @@
 	padding: 1rem;
 
 	display: flex;
+	justify-content: flex-start;
+	align-content: flex-start;
 	flex-wrap: wrap;
 }
 
@@ -166,20 +164,40 @@
 	width: 200px;
 	height: 200px;
 	border-radius: 10px;
-	background-color: var(--boxBackground);
-
+	background-color: var(--purpleTheme);
+	transition: var(--timeDelay) ease;
 	margin: 10px;
+	padding: 10px;
+	color: white;
+	overflow-y: auto;
 }
 
 .box:hover {
 	transition: var(--timeDelay) ease;
 	background-color: var(--backgroundTheme);
+	color: var(--purpleTextTheme);
 }
 
-/* Resposiveness */
+p.title {
+	letter-spacing: 0.2ch;
+	font-family: "Luxurious Roman", cursive;
+	text-align: center;
+	padding: 5px 0px;
+	font-size: 1.5rem;
+}
+
+p.content {
+	font-size: 0.9rem;
+	font-family: "Montserrat", sans-serif;
+}
+
+/* Responsiveness for the nav bar
+At the end because margin of 5rem is preprocessed before*/
+
 @media screen and (max-width: 500px) {
 	.main_page {
 		margin-left: 0;
+		width: 100vw;
 	}
 
 	.navbar {
@@ -195,18 +213,6 @@
 		display: flex;
 		flex-direction: row;
 		height: 4rem;
-		justify-content: space-evenly;
-		transition: var(--timeDelay) ease;
-	}
-
-	.navlinks {
-		display: flex;
-		justify-content: space-evenly;
-	}
-
-	.navbar:hover .navlinks {
-		display: flex;
-		justify-content: space-evenly;
 	}
 
 	.navbar:hover .navlinks p {
@@ -217,8 +223,7 @@
 		width: 100vw;
 	}
 
-	.navbar:hover .navbarcontainer {
-		transition: var(--timeDelay) ease;
-		justify-content: space-evenly;
+	.notes_frame {
+		justify-content: center;
 	}
 }
