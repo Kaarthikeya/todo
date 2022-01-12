@@ -5,43 +5,43 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>To-do App</title>
-		<script src="index.js" defer></script>
+		<title>ListiFy! Don't Forget!</title>
+		<script
+			src="https://kit.fontawesome.com/d29b7d0301.js"
+			crossorigin="anonymous"
+		></script>
 	</head>
 	<body>
-		<div class="main_page">
-			<!-- Navigation Pane -->
-
-			<header class="nav_bar">
-				<div class="inner_box_with_logo">
-					<p>To-Do List</p>
+		<nav class="navbar">
+			<div class="navbarcontainer">
+				<div class="navlinks">
+					<i class="fas fa-chevron-circle-down"></i>
+					<p>Menu</p>
 				</div>
-
-				<div class="buttons_to_add">
-					<ul>
-						<li class="add_button">
-							<a href="">New</a>
-						</li>
-						<li class="add_button">
-							<a href="">Edit</a>
-						</li>
-						<li class="add_button">
-							<a href="">Delete</a>
-						</li>
-					</ul>
+				<div class="navlinks">
+					<i class="fa fa-home"></i>
+					<p>Home</p>
 				</div>
-			</header>
-
-			<!-- This is the box items -->
-
-			<div class="box_items_flex">
-				<div class="box_items">
-                    <p>Click to add a new note! &#128519</p>
-                </div>
+				<div class="navlinks">
+					<i class="fa fa-plus"></i>
+					<p>Add</p>
+				</div>
+				<div class="navlinks">
+					<i class="fa fa-edit"></i>
+					<p>Edit</p>
+				</div>
+				<div class="navlinks">
+					<i class="fa fa-trash"></i>
+					<p>Delete</p>
+				</div>
 			</div>
-		</div>
-		<div class="new_note">
-			<p>This is a new note page!!</p>
+		</nav>
+
+		<div class="main_page">
+			<div class="header">
+				<p>Listify</p>
+			</div>
+			<div class="notes_frame"></div>
 		</div>
 	</body>
 </html>
