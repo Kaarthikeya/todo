@@ -1,229 +1,135 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
 
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-}
-
-::-webkit-scrollbar {
-	width: 0.4rem;
-}
-
-::-webkit-scrollbar-track {
-	border-top-right-radius: 20px;
-	border-bottom-right-radius: 20px;
-	background-color: var(--backgroundTheme);
-}
-
-::-webkit-scrollbar-thumb {
-	border-radius: 20px;
-	background-color: var(--purpleTheme);
-}
-
-:root {
 	font-size: 16px;
-	font-family: "Montserrat", sans-serif;
-	--orangeTheme: rgb(255, 87, 57);
-	--cyanTheme: rgb(126, 255, 212);
-	--backgroundTheme: rgb(26, 26, 26);
-	--backgroundHover: rgb(10, 10, 10);
-	--purpleTheme: rgb(96, 70, 129);
-	--purpleTextTheme: rgb(174, 153, 197);
-	--boxBackground: rgb(31, 31, 31);
-	--timeDelay: 0.7s;
+	font-family: "Poppins", sans-serif;
 }
 
-.navbar {
-	transition: var(--timeDelay) ease;
-	position: fixed;
-	height: 100vh;
-	width: 5rem;
-	padding: 5px;
-	background-color: var(--backgroundTheme);
-	border-bottom-right-radius: 10px;
-	border-top-right-radius: 10px;
-}
-
-.navbarcontainer {
+.notes_container {
+	border: 1px solid black;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	height: 70vh;
-	width: inherit;
-}
-
-.navlinks {
-	width: inherit;
-	height: 3rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-radius: 10px;
-
-	padding: 2rem 0rem;
-}
-
-.navlinks p {
-	font-family: "Berkshire Swash", cursive;
-	display: none;
-	font-size: 1.2rem;
-}
-
-.navlinks i {
-	color: var(--purpleTheme);
-	font-size: 1.5rem;
-}
-
-.navbar:hover {
-	transition: var(--timeDelay) ease;
-	width: 15rem;
-}
-
-.navbar:hover .navbarcontainer {
-	display: flex;
-	width: inherit;
-}
-
-.navbar:hover .navlinks {
-	padding: 2rem 3rem 2rem 2rem;
-	display: flex;
-	justify-content: space-between;
-}
-
-.navbar:hover .navlinks p {
-	display: block;
-	color: white;
-}
-
-.navlinks:hover i {
-	transition: var(--timeDelay) ease;
-	color: var(--orangeTheme);
-	filter: opacity(1) grayscale(0);
-}
-
-.fa-chevron-circle-down {
-	transition: var(--timeDelay) ease;
-	transform: rotate(-90deg);
-}
-
-.navbar:hover .fa-chevron-circle-down {
-	transform: rotate(-270deg);
-	transition: var(--timeDelay) ease;
-}
-
-.fa-plus {
-	transition: var(--timeDelay) ease;
-	transform: rotate(90deg);
-}
-
-.navlinks:nth-child(3):hover .fa-plus {
-	transition: calc(var(--timeDelay)) ease;
-	transform: rotate(-180deg);
-}
-
-/* Main Page starts now */
-
-.main_page {
-	transition: var(--timeDelay) ease;
-	min-height: 110vh;
-	padding: 1rem;
-	margin-left: 5rem;
-}
-
-.header {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 3rem;
-	border-radius: 10px;
-}
-
-.header p {
-	text-transform: uppercase;
-	font-family: "Rock Salt", cursive;
-	letter-spacing: 1ch;
-}
-
-.notes_frame {
-	min-height: 100vh;
-	width: 100%;
-	padding: 1rem;
-
-	display: flex;
-	justify-content: flex-start;
-	align-content: flex-start;
-	flex-wrap: wrap;
+	padding: 10px;
 }
 
 .box {
-	width: 200px;
-	height: 200px;
-	border-radius: 10px;
-	background-color: var(--purpleTheme);
-	transition: var(--timeDelay) ease;
-	margin: 10px;
+	background-color: lightcyan;
 	padding: 10px;
-	color: white;
-	overflow-y: auto;
+	border: 1px solid black;
+	display: flex;
+	align-items: center;
 }
 
-.box:hover {
-	transition: var(--timeDelay) ease;
-	background-color: var(--backgroundTheme);
-	color: var(--purpleTextTheme);
+.box .checkbox {
+	display: flex;
+	align-items: center;
+	padding-right: 10px;
 }
 
-p.title {
-	letter-spacing: 0.2ch;
-	font-family: "Luxurious Roman", cursive;
-	text-align: center;
-	padding: 5px 0px;
-	font-size: 1.5rem;
+.box .note_info .title {
+	font-size: 1.2rem;
 }
 
-p.content {
-	font-size: 0.9rem;
-	font-family: "Montserrat", sans-serif;
+.box .note_info .additional_info {
+	font-size: 0.8rem;
 }
 
-/* Responsiveness for the nav bar
-At the end because margin of 5rem is preprocessed before*/
+.btns_for_action {
+	position: fixed;
+	width: 100vw;
+	height: 50px;
+	bottom: 0;
+	background-color: rgb(190, 190, 106);
 
-@media screen and (max-width: 500px) {
-	.main_page {
-		margin-left: 0;
-		width: 100vw;
-	}
+	display: flex;
+	justify-content: space-evenly;
+}
 
-	.navbar {
-		bottom: 0;
-		position: fixed;
-		height: 5rem;
-		width: 100vw;
-		border-bottom-right-radius: 0;
-		border-top-left-radius: 10px;
-	}
+#delete_btn,
+#add_btn,
+#edit_btn {
+	cursor: pointer;
+}
 
-	.navbarcontainer {
-		display: flex;
-		flex-direction: row;
-		height: 4rem;
-	}
+/* Css Styling for Overlay_add for "Add" */
 
-	.navbar:hover .navlinks p {
-		display: none;
-	}
+#overlay_add {
+	padding: 10px;
+	position: fixed;
 
-	.navbar:hover {
-		width: 100vw;
-	}
+	width: 400px;
+	height: 400px;
 
-	.notes_frame {
-		justify-content: center;
-	}
+	max-width: 90%;
+	max-height: 70%;
+
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+
+	z-index: 2;
+	border: 1px solid cyan;
+	background-color: lightcyan;
+
+	transition: 300ms ease-in-out;
+}
+
+#overlay_add header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#overlay_add button {
+	cursor: pointer;
+	border: none;
+	outline: none;
+	background-color: transparent;
+
+	width: 20px;
+	height: 20px;
+	padding-top: 5px;
+	padding-right: 10px;
+
+	font-size: 20px;
+}
+
+#overlay_add header div {
+	font-family: "Poppins", sans-serif;
+}
+
+/* Form for inputing details for new note */
+
+.form_for_adding_new_notes {
+	overflow-x: auto;
+	margin-top: 1rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.title_div,
+.additional_info_div,
+.submit_button_for_form {
+	margin-top: 1rem;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.submit_button_for_form {
+	cursor: pointer;
+	width: 100px;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: lightgoldenrodyellow;
+	transition: 0.5s ease;
+}
+
+.submit_button_for_form:hover {
+	transition: 0.5s ease;
+	background-color: lightpink;
 }

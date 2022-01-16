@@ -5,83 +5,64 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>ListiFy! Don't Forget!</title>
-		<script
-			src="https://kit.fontawesome.com/d29b7d0301.js"
-			crossorigin="anonymous"
-		></script>
+		<title>ListiFy!</title>
 	</head>
 	<body>
-		<nav class="navbar">
-			<div class="navbarcontainer">
-				<div class="navlinks">
-					<i class="fas fa-chevron-circle-down"></i>
-					<p>Menu</p>
+		<div class="notes_container">
+			<div class="box">
+				<div class="checkbox">
+					<input type="checkbox" name="" id="" />
 				</div>
-				<div class="navlinks">
-					<i class="fa fa-home"></i>
-					<p>Home</p>
+				<div class="note_info">
+					<div class="title">Title Place!</div>
+					<div class="additional_info">
+						Lorem ipsum dolor, sit amet consectetur adipisicing
+						elit. Ut doloremque eaque accusantium. Nostrum a nemo
+						laudantium eum dolor rerum et facere consectetur.
+					</div>
 				</div>
-				<div class="navlinks">
-					<i class="fa fa-plus"></i>
-					<p>Add</p>
-				</div>
-				<div class="navlinks">
-					<i class="fa fa-edit"></i>
-					<p>Edit</p>
-				</div>
-				<div class="navlinks">
-					<i class="fa fa-trash"></i>
-					<p>Delete</p>
-				</div>
-			</div>
-		</nav>
-
-		<div class="main_page">
-			<div class="header">
-				<p>Listify</p>
-			</div>
-			<div class="notes_frame">
-				<div class="box">
-					<p class="title">Title</p>
-					<p class="content">
-						Lorem ipsum dolor sit, amet consectetur adipisicing
-						elit. Repellat earum neque illum recusandae deserunt
-						nesciunt facere nihil deleniti, qui vel autem molestias
-						dicta itaque. Lorem, ipsum dolor sit amet consectetur
-						adipisicing elit. Culpa, est eius itaque, velit autem
-						necessitatibus ullam praesentium blanditiis corrupti
-						aliquid iusto. Ea quibusdam ab neque optio, aspernatur
-						atque corrupti ullam?
-					</p>
-				</div>
-				<div class="box">
-					<p class="title">Title</p>
-					<p class="content">
-						Lorem ipsum dolor sit, amet consectetur adipisicing
-						elit. Repellat earum neque illum recusandae deserunt
-						nesciunt facere nihil deleniti, qui vel autem molestias
-						dicta itaque. Lorem, ipsum dolor sit amet consectetur
-						adipisicing elit. Culpa, est eius itaque, velit autem
-						necessitatibus ullam praesentium blanditiis corrupti
-						aliquid iusto. Ea quibusdam ab neque optio, aspernatur
-						atque corrupti ullam?
-					</p>
-				</div>
-				<div class="box">
-					<p class="title add-content">Title</p>
-					<p class="content">
-						Lorem ipsum dolor sit, amet consectetur adipisicing
-						elit. Repellat earum neque illum recusandae deserunt
-						nesciunt facere nihil deleniti, qui vel autem molestias
-						dicta itaque. Lorem, ipsum dolor sit amet consectetur
-						adipisicing elit. Culpa, est eius itaque, velit autem
-						necessitatibus ullam praesentium blanditiis corrupti
-						aliquid iusto. Ea quibusdam ab neque optio, aspernatur
-						atque corrupti ullam?
-					</p>
-				</div>
+				<div class="color_tag"></div>
 			</div>
 		</div>
+		<div class="btns_for_action">
+			<input type="button" value="Delete" id="delete_btn" />
+			<input
+				type="button"
+				value="Add"
+				id="add_btn"
+				onclick="startOverlay()"
+			/>
+			<input type="button" value="Edit" id="edit_btn" />
+		</div>
+
+		<!-- This is the code for the "New" Overlay-->
+
+		<div id="overlay_add">
+			<header>
+				<div>Add a new Note!!!</div>
+				<div id="close_btn_overlay" onclick="closeOverlay()">
+					<button>&times;</button>
+				</div>
+			</header>
+
+			<!-- The form for submitting  -->
+			<div class="form_for_adding_new_notes">
+				<div class="title_div">
+					<label for="note_title">Title</label>
+					<input type="text" id="note_title" />
+				</div>
+				<div class="additional_info_div">
+					<label for="additional_info_for_adding_a_new_note"
+						>Extra info?</label
+					>
+					<input
+						type="text"
+						id="additional_info_for_adding_a_new_note"
+					/>
+				</div>
+				<div class="submit_button_for_form">Submit??</div>
+			</div>
+		</div>
+		<script src="script.js"></script>
 	</body>
 </html>
