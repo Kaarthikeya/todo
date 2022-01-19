@@ -12,28 +12,37 @@
 	border: 1px solid black;
 	display: flex;
 	padding: 10px;
-}
 
-.box {
-	background-color: lightcyan;
-	padding: 10px;
-	border: 1px solid black;
-	display: flex;
+	min-height: 100vh;
+	justify-content: flex-start;
+	flex-direction: column;
 	align-items: center;
 }
 
-.box .checkbox {
+.box {
+	margin-top: 10px;
+	border-radius: 10px;
+	background-color: lightcyan;
+	padding: 10px;
+	border: 1px solid black;
+	display: none;
+	align-items: center;
+	min-width: 200px;
+	width: 80vw;
+}
+
+.checkbox {
 	display: flex;
 	align-items: center;
 	padding-right: 10px;
 }
 
-.box .note_info .title {
+.title {
 	font-size: 1.2rem;
 }
 
-.box .note_info .additional_info {
-	font-size: 0.8rem;
+.additional_info {
+	font-size: 0.6rem;
 }
 
 .btns_for_action {
@@ -41,7 +50,7 @@
 	width: 100vw;
 	height: 50px;
 	bottom: 0;
-	background-color: rgb(190, 190, 106);
+	background-color: rgba(93, 213, 235, 0.3);
 
 	display: flex;
 	justify-content: space-evenly;
@@ -53,7 +62,9 @@
 	cursor: pointer;
 }
 
-/* Css Styling for Overlay_add for "Add" */
+/* Css Styling for Overlay_add for "Add" 
+Practically for styling the form;
+*/
 
 #overlay_add {
 	padding: 10px;
@@ -111,14 +122,14 @@
 
 .title_div,
 .additional_info_div,
-.submit_button_for_form {
+#submit_button_for_form {
 	margin-top: 1rem;
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
 }
 
-.submit_button_for_form {
+#submit_button_for_form {
 	cursor: pointer;
 	width: 100px;
 	height: 30px;
@@ -129,7 +140,12 @@
 	transition: 0.5s ease;
 }
 
-.submit_button_for_form:hover {
+#submit_button_for_form:hover {
 	transition: 0.5s ease;
 	background-color: lightpink;
+}
+
+.title_div input,
+.additional_info_div input {
+	width: 200px;
 }

@@ -3,27 +3,32 @@
 	<head>
 		<link rel="stylesheet" href="style.css" />
 		<meta charset="UTF-8" />
+		<script src="script.js" defer></script>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>ListiFy!</title>
 	</head>
 	<body>
+		<!-- 
+
+			THis is the container for holding all the notes;
+
+	 -->
 		<div class="notes_container">
-			<div class="box">
+			<div class="box" id="box">
 				<div class="checkbox">
-					<input type="checkbox" name="" id="" />
+					<input type="checkbox" class="checkbox" name="" id="" />
 				</div>
 				<div class="note_info">
-					<div class="title">Title Place!</div>
-					<div class="additional_info">
-						Lorem ipsum dolor, sit amet consectetur adipisicing
-						elit. Ut doloremque eaque accusantium. Nostrum a nemo
-						laudantium eum dolor rerum et facere consectetur.
-					</div>
+					<div class="title" id="title"></div>
+					<div class="additional_info" id="add_info"></div>
 				</div>
-				<div class="color_tag"></div>
 			</div>
 		</div>
+
+		<!-- THe BUttons required to edit, delete and add the 
+		new overlays!!! -->
+
 		<div class="btns_for_action">
 			<input type="button" value="Delete" id="delete_btn" />
 			<input
@@ -60,9 +65,13 @@
 						id="additional_info_for_adding_a_new_note"
 					/>
 				</div>
-				<div class="submit_button_for_form">Submit??</div>
+				<div
+					id="submit_button_for_form"
+					onclick="getInfoOnClickonConsole()"
+				>
+					Submit??
+				</div>
 			</div>
 		</div>
-		<script src="script.js"></script>
 	</body>
 </html>
