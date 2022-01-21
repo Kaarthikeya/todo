@@ -7,41 +7,40 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>ListiFy!</title>
+		<script src="https://kit.fontawesome.com/d29b7d0301.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
-		<!-- 
-
-			THis is the container for holding all the notes;
-
-	 -->
+		<!-- THis is the container for holding all the notes -->
 		<div class="notes_container">
-			<div class="box" id="box">
+			<div class="box">
 				<div class="checkbox">
-					<input type="checkbox" class="checkbox" name="" id="" />
+					<input
+						type="checkbox"
+						class="checkbox_input_for_deleting"
+					/>
 				</div>
 				<div class="note_info">
-					<div class="title" id="title"></div>
-					<div class="additional_info" id="add_info"></div>
+					<div class="title" id="title">Hello World</div>
+					<div class="additional_info" id="add_info">
+						Good Morning! Lorem ipsum dolor sit amet, consectetur
+						adipisicing elit. 
+				</div>
+
+				<div class="edit">
+					<i class="fas fa-edit"></i>
 				</div>
 			</div>
 		</div>
-
-		<!-- THe BUttons required to edit, delete and add the 
-		new overlays!!! -->
-
+		<!-- THe BUttons required to edit, delete and add the new overlays!!! -->
 		<div class="btns_for_action">
-			<input type="button" value="Delete" id="delete_btn" />
 			<input
 				type="button"
 				value="Add"
 				id="add_btn"
 				onclick="startOverlay()"
 			/>
-			<input type="button" value="Edit" id="edit_btn" />
 		</div>
-
 		<!-- This is the code for the "New" Overlay-->
-
 		<div id="overlay_add">
 			<header>
 				<div>Add a new Note!!!</div>
@@ -49,7 +48,6 @@
 					<button>&times;</button>
 				</div>
 			</header>
-
 			<!-- The form for submitting  -->
 			<div class="form_for_adding_new_notes">
 				<div class="title_div">
@@ -65,10 +63,7 @@
 						id="additional_info_for_adding_a_new_note"
 					/>
 				</div>
-				<div
-					id="submit_button_for_form"
-					onclick="getInfoOnClickonConsole()"
-				>
+				<div id="submit_button_for_form" onclick="addNewNote()">
 					Submit??
 				</div>
 			</div>

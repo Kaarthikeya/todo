@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
 
 * {
 	box-sizing: border-box;
@@ -22,13 +22,17 @@
 .box {
 	margin-top: 10px;
 	border-radius: 10px;
-	background-color: lightcyan;
+	background-color: rgb(94, 132, 214);
 	padding: 10px;
-	border: 1px solid black;
-	display: none;
+	display: flex;
 	align-items: center;
 	min-width: 200px;
+	color: white;
 	width: 80vw;
+	height: 80px;
+	transition: 1s ease-in-out;
+
+	position: relative;
 }
 
 .checkbox {
@@ -50,10 +54,30 @@
 	width: 100vw;
 	height: 50px;
 	bottom: 0;
-	background-color: rgba(93, 213, 235, 0.3);
+	background-color: rgba(11, 52, 59, 0.644);
 
 	display: flex;
 	justify-content: space-evenly;
+}
+
+.edit {
+	position: absolute;
+	top: 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	right: 0px;
+
+	width: 50px;
+	height: 80px;
+	border-radius: 10px;
+	transition: 0.2s ease-in-out;
+}
+
+.edit:hover {
+	transition: 0.2s ease-in-out;
+	background-color: tomato;
 }
 
 #delete_btn,
