@@ -54,8 +54,7 @@ function addNewNote() {
 	titleFinal.className = "title";
 	addFinal.className = "additional_info";
 	editButton.className = "edit";
-	editfa.classList.add = "fas";
-	editfa.classList.add = "fa-edit";
+	editfa.classList.add("fas", "fa-edit");
 
 	/* Check Box click functions and stuff!! */
 
