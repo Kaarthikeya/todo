@@ -1,9 +1,10 @@
-var overlay = document.getElementById("overlay_add");
+var overlay = document.getElementsByClassName("overlay_add")[0];
 function startOverlay() {
-	overlay.style.transform = "scale(1) translate(-50%, -50%)";
+	overlay.classList.add("overlay_open");
+	document.getElementsByClassName
 }
 function closeOverlay() {
-	overlay.style.transform = "scale(0) translate(-50%, -50%)";
+	overlay.classList.remove("overlay_open");
 }
 function getRandInt() {
 	return Math.floor(Math.random() * 999999999999999) + 1;
@@ -19,7 +20,6 @@ if (number != null) {
 		var checkBox = document.createElement("div");
 		var noteInfo = document.createElement("div");
 		var titleFinal = document.createElement("div");
-		var checkBoxClick = document.createElement("input");
 		var editButton = document.createElement("div");
 		var deleteButton = document.createElement("div");
 		var editfa = document.createElement("i");
@@ -36,17 +36,12 @@ if (number != null) {
 		deletefa.classList.add("fas", "fa-trash");
 		editfa.classList.add("fas", "fa-edit");
 
-		/* Check Box click functions and stuff!! */
-		checkBoxClick.className = "checkbox_input_for_deleting";
-		checkBoxClick.type = "checkbox";
-
 		//Appending Stuff
 		newNote.appendChild(checkBox);
 		newNote.appendChild(noteInfo);
 		noteInfo.appendChild(titleFinal);
 		noteInfo.appendChild(editButton);
 		noteInfo.appendChild(deleteButton);
-		checkBox.append(checkBoxClick);
 		editButton.appendChild(editfa);
 		deleteButton.appendChild(deletefa);
 		//Giving their text to them;
@@ -59,7 +54,6 @@ if (number != null) {
 
 		deleteButton.addEventListener("click", function () {
 			document.getElementById(idNumber).style.display = "none";
-
 			localStorage.removeItem(idNumber);
 		});
 
@@ -94,7 +88,6 @@ function addNewNote() {
 	var checkBox = document.createElement("div");
 	var noteInfo = document.createElement("div");
 	var titleFinal = document.createElement("div");
-	var checkBoxClick = document.createElement("input");
 	var editButton = document.createElement("div");
 	var deleteButton = document.createElement("div");
 	var editfa = document.createElement("i");
@@ -111,18 +104,12 @@ function addNewNote() {
 	deletefa.classList.add("fas", "fa-trash");
 	editfa.classList.add("fas", "fa-edit");
 
-	/* Check Box click functions and stuff!! */
-
-	checkBoxClick.type = "checkbox";
-	checkBoxClick.className = "checkbox_input_for_deleting";
-
 	//Appending Stuff
 	newNote.appendChild(checkBox);
 	newNote.appendChild(noteInfo);
 	noteInfo.appendChild(titleFinal);
 	noteInfo.appendChild(editButton);
 	noteInfo.appendChild(deleteButton);
-	checkBox.append(checkBoxClick);
 	editButton.appendChild(editfa);
 	deleteButton.appendChild(deletefa);
 	//Giving their text to them;

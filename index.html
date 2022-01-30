@@ -3,6 +3,8 @@
 	<head>
 		<link rel="stylesheet" href="style.css" />
 		<meta charset="UTF-8" />
+		<script src="script.js" defer></script>
+
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>ListiFy! Never Forget!</title>
@@ -12,17 +14,21 @@
 		></script>
 	</head>
 	<body>
-		<!-- THis is the container for holding all the notes -->
+		<!-- THis div is to blur the background on clicking the add button -->
+		<div class="dum"></div>
+		<!-- The title of and the offcial header of the website -->
+		<div class="title_container">ListiFy</div>
+
+		<!-- THis is the container 
+			for holding all
+			 the notes 
+			-->
+
 		<div class="notes_container">
 			<div class="box">
-				<div class="checkbox">
-					<input
-						type="checkbox"
-						class="checkbox_input_for_deleting"
-					/>
-				</div>
+				<div class="checkbox"></div>
 				<div class="note_info">
-					<div class="title" id="title">Hello World</div>
+					<div class="title" id="title"></div>
 					<div class="edit">
 						<i class="fas fa-edit"></i>
 					</div>
@@ -32,34 +38,44 @@
 				</div>
 			</div>
 		</div>
-		<!-- THe BUttons required to edit, delete and add the new overlays!!! -->
-		<div class="btns_for_action">
-			<input
-				type="button"
-				value="Add"
-				id="add_btn"
-				onclick="startOverlay()"
-			/>
+
+		<!-- THe BUttons required to edit, 
+			delete and add the new 
+			overlays!!! -->
+		<div class="btns_for_action" onclick="startOverlay()">
+			<i class="fas fa-plus"></i>
 		</div>
-		<!-- This is the code for the "New" Overlay-->
-		<div id="overlay_add">
-			<header>
-				<div>Add a new Note!!!</div>
-				<div id="close_btn_overlay" onclick="closeOverlay()">
-					<button>&times;</button>
-				</div>
-			</header>
+
+		<!-- This is the code for the 
+			
+			"New" 
+		
+			Overlay-->
+
+		<div class="overlay_add">
+			<div class="header">
+				<div id="add_a_new_note">Wanna add something?</div>
+			</div>
 			<!-- The form for submitting  -->
 			<div class="form_for_adding_new_notes">
-				<div class="title_div">
-					<label for="note_title">Title</label>
-					<input type="text" id="note_title" maxlength="10" />
-				</div>
-				<div id="submit_button_for_form" onclick="addNewNote()">
-					Submit??
+				<input
+					type="text"
+					id="note_title"
+					maxlength="10"
+					placeholder="Title"
+				/>
+				<div class="btns">
+					<div class="submit_button_for_form" onclick="addNewNote()">
+						Go!
+					</div>
+					<div
+						class="submit_button_for_form"
+						onclick="closeOverlay()"
+					>
+						Cancel
+					</div>
 				</div>
 			</div>
 		</div>
-		<script src="script.js" defer></script>
 	</body>
 </html>

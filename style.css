@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
 
 * {
 	box-sizing: border-box;
@@ -6,10 +8,43 @@
 	padding: 0;
 	font-size: 16px;
 	font-family: "Poppins", sans-serif;
+	--background-color: #1a1a1d;
+	--contrast: #c3073f;
+	--contrastDarker: #950740;
+	--font: #c3073f;
+	--greyish: #4e4e50;
+}
+
+::-webkit-scrollbar {
+	width: 4px;
+	background-color: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+	background: linear-gradient(
+		var(--contrastDarker),
+		var(--contrast),
+		var(--font)
+	);
+}
+
+body {
+	background-color: var(--background-color);
+}
+
+.title_container {
+	margin: 0px 1.5rem;
+	display: flex;
+	border-bottom: 2px solid var(--contrastDarker);
+	justify-content: center;
+
+	color: var(--font);
+	font-size: 2rem;
+	font-family: "Rock Salt", cursive;
 }
 
 .notes_container {
-	border: 1px solid black;
+	border-radius: 10px;
 	display: flex;
 	padding: 10px;
 
@@ -22,14 +57,14 @@
 .box {
 	margin-top: 10px;
 	border-radius: 10px;
-	background-color: rgb(94, 132, 214);
+	background-color: var(--contrast);
 	padding: 10px;
-	display: flex;
+	display: none;
 	align-items: center;
 
 	min-width: 200px;
 	color: white;
-	width: 80vw;
+	width: 85vw;
 	height: 60px;
 
 	transition: 1s ease-in-out;
@@ -37,11 +72,6 @@
 	position: relative;
 
 	overflow-y: hidden;
-}
-
-.line-through {
-	text-decoration: line-through;
-	filter: opacity(0.3);
 }
 
 .note_info {
@@ -60,7 +90,7 @@
 	width: 40px;
 	height: 40px;
 	border-radius: 10px;
-	transition: 400ms ease-in-out;
+	transition: 200ms ease-in-out;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -68,14 +98,30 @@
 
 .delete:hover,
 .edit:hover {
-	background-color: rgb(51, 54, 99);
-	transition: 400ms ease-in-out;
+	background-color: var(--background-color);
+	transition: 200ms ease-in-out;
 }
 
 .checkbox {
-	display: flex;
-	align-items: center;
-	padding-right: 10px;
+	width: 0.8rem;
+	height: 0.8rem;
+	border-radius: 20px;
+	background-color: white;
+	margin-right: 10px;
+
+	transition: 200ms ease-in-out;
+}
+
+.line-through {
+	filter: opacity(0.4);
+}
+
+.line-through .title {
+	text-decoration: line-through;
+}
+
+.line-through .checkbox {
+	background-color: var(--background-color);
 }
 
 .title {
@@ -88,13 +134,29 @@
 
 .btns_for_action {
 	position: fixed;
-	width: 100vw;
+	right: 1.5rem;
+	bottom: 1.5rem;
+	width: 50px;
 	height: 50px;
-	bottom: 0;
-	background-color: rgba(11, 52, 59, 0.644);
+	border-radius: 50%;
+	border: none;
+	background-color: var(--contrastDarker);
 
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: center;
+	align-items: center;
+
+	transition: 200ms ease-in-out;
+}
+
+.btns_for_action:hover {
+	cursor: pointer;
+	background-color: var(--contrast);
+	transition: 200ms ease-in-out;
+}
+
+.fa-plus {
+	color: white;
 }
 
 #delete_btn {
@@ -105,12 +167,19 @@
 Practically for styling the form;
 */
 
-#overlay_add {
-	padding: 10px;
+.blur {
+	
+}
+
+.overlay_add {
+	padding: 1rem;
+
 	position: fixed;
+	border-radius: 30px;
+	font-family: "Comfortaa", cursive;
 
 	width: 400px;
-	height: 400px;
+	min-height: 200px;
 
 	max-width: 90%;
 	max-height: 70%;
@@ -120,13 +189,21 @@ Practically for styling the form;
 	transform: translate(-50%, -50%) scale(0);
 
 	z-index: 2;
-	border: 1px solid cyan;
-	background-color: lightcyan;
+	background-color: var(--font);
 
-	transition: 300ms ease-in-out;
+	transition: 200ms ease-in-out;
+	color: white;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
-#overlay_add header {
+.overlay_open {
+	transform: translate(-50%, -50%) scale(1);
+}
+
+#overlay_add .header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -146,8 +223,12 @@ Practically for styling the form;
 	font-size: 20px;
 }
 
-#overlay_add header div {
+#overlay_add .header div {
 	font-family: "Poppins", sans-serif;
+}
+
+#add_a_new_note {
+	font-size: 1.2rem;
 }
 
 /* Form for inputing details for new note */
@@ -157,31 +238,52 @@ Practically for styling the form;
 	margin-top: 1rem;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 }
 
 .title_div,
 .additional_info_div,
-#submit_button_for_form {
+.submit_button_for_form {
 	margin-top: 1rem;
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
 }
 
-#submit_button_for_form {
+.btns {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+}
+
+#note_title {
+	border-radius: 10px;
+	border: none;
+	padding: 10px;
+	text-transform: capitalize;
+	width: initial;
+}
+
+#note_title:focus {
+	outline: none;
+	border: none;
+}
+
+.submit_button_for_form {
 	cursor: pointer;
 	width: 100px;
 	height: 30px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: lightgoldenrodyellow;
-	transition: 0.5s ease;
+	border-radius: 10px;
+	transition: 200ms ease-in-out;
+	background-color: var(--background-color);
 }
 
-#submit_button_for_form:hover {
-	transition: 0.5s ease;
-	background-color: lightpink;
+.submit_button_for_form:hover {
+	transition: 200ms ease-in-out;
+	background-color: #1a1a1db6;
 }
 
 .title_div input,
