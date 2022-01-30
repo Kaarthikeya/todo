@@ -1,20 +1,31 @@
-var overlay = document.getElementsByClassName("overlay_add")[0];
+const overlay = document.getElementsByClassName("overlay_add")[0];
+const dummyDiv = document.getElementById("dum");
 function startOverlay() {
+	dummyDiv.classList.add("blur_effect");
 	overlay.classList.add("overlay_open");
-	document.getElementsByClassName
+}
+function startEditOverlay() {
+	dummyDiv.classList.add("blur_effect");
+	document.getElementById("overlay_edit").classList.add("overlay_open");
+}
+function closeEditOverlay() {
+	dummyDiv.classList.remove("blur_effect");
+	document.getElementById("overlay_edit").classList.remove("overlay_open");
+	document.getElementById("note_edit_title").value = "";
 }
 function closeOverlay() {
 	overlay.classList.remove("overlay_open");
+	dummyDiv.classList.remove("blur_effect");
+	document.getElementById("note_title").value = "";
 }
 function getRandInt() {
 	return Math.floor(Math.random() * 999999999999999) + 1;
 }
 
 var number = localStorage.length;
-if (number != null) {
+if (number != 0) {
 	for (var i = 0; i < number; i++) {
 		const idNumber = localStorage.key(i);
-		console.log(idNumber);
 		//CReating new div elements to suit the needs;
 		var newNote = document.createElement("div");
 		var checkBox = document.createElement("div");
@@ -62,11 +73,28 @@ if (number != null) {
 		});
 
 		editButton.addEventListener("click", function () {
-			startOverlay();
-			document.getElementById("note_title").value =
-				this.previousSibling.textContent;
-			this.parentNode.parentNode.style.display = "none";
-			localStorage.removeItem(this.parentNode.parentNode.id);
+			let unchangedText = document.getElementById(idNumber).innerText;
+			startEditOverlay();
+			let editOverlayTextColumn =
+				document.getElementById("note_edit_title");
+			editOverlayTextColumn.value = unchangedText;
+
+			var doneButton = document.getElementById("edit_btn");
+			doneButton.addEventListener("click", function () {
+				var changedText = editOverlayTextColumn.value;
+
+				changedText = editOverlayTextColumn.value;
+				if (changedText == "") {
+					alert("Title cannot be null");
+					return;
+				}
+				console.log(unchangedText + " " + changedText);
+				document.getElementById(
+					idNumber
+				).children[1].children[0].textContent = changedText;
+				localStorage.setItem(idNumber, changedText);
+				closeEditOverlay();
+			});
 		});
 	}
 }
@@ -131,11 +159,27 @@ function addNewNote() {
 	});
 
 	editButton.addEventListener("click", function () {
-		startOverlay();
-		document.getElementById("note_title").value =
-			this.previousSibling.textContent;
-		this.parentNode.parentNode.style.display = "none";
-		localStorage.removeItem(this.parentNode.parentNode.id);
+		let unchangedText = document.getElementById(randint).innerText;
+		startEditOverlay();
+		let editOverlayTextColumn = document.getElementById("note_edit_title");
+		editOverlayTextColumn.value = unchangedText;
+
+		var doneButton = document.getElementById("edit_btn");
+		doneButton.addEventListener("click", function () {
+			var changedText = editOverlayTextColumn.value;
+
+			changedText = editOverlayTextColumn.value;
+			if (changedText == "") {
+				alert("Title cannot be null");
+				return;
+			}
+			console.log(unchangedText + " " + changedText);
+			document.getElementById(
+				randint
+			).children[1].children[0].textContent = changedText;
+			localStorage.setItem(randint, changedText);
+			closeEditOverlay();
+		});
 	});
 
 	document.getElementById("note_title").value = "";

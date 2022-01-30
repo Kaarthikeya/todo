@@ -15,9 +15,9 @@
 	</head>
 	<body>
 		<!-- THis div is to blur the background on clicking the add button -->
-		<div class="dum"></div>
+		<div id="dum"></div>
 		<!-- The title of and the offcial header of the website -->
-		<div class="title_container">ListiFy</div>
+		<div class="title_container">listify.</div>
 
 		<!-- THis is the container 
 			for holding all
@@ -61,8 +61,8 @@
 				<input
 					type="text"
 					id="note_title"
-					maxlength="10"
 					placeholder="Title"
+					maxlength="12"
 				/>
 				<div class="btns">
 					<div class="submit_button_for_form" onclick="addNewNote()">
@@ -71,6 +71,37 @@
 					<div
 						class="submit_button_for_form"
 						onclick="closeOverlay()"
+					>
+						Cancel
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- THis is the
+			 code for editing
+			  the overlay
+		 -->
+
+		<div class="overlay_add" id="overlay_edit">
+			<div class="header">
+				<div id="edit_a_new_note">Something Wrong?</div>
+			</div>
+			<!-- The form for submitting  -->
+			<div class="form_for_adding_new_notes">
+				<input
+					type="text"
+					id="note_edit_title"
+					maxlength="12"
+					placeholder="Title"
+				/>
+				<div class="btns">
+					<div class="submit_button_for_form" id="edit_btn">
+						Done!
+					</div>
+					<div
+						class="submit_button_for_form"
+						onclick="closeEditOverlay()"
 					>
 						Cancel
 					</div>
