@@ -11,7 +11,6 @@ function startEditOverlay() {
 function closeEditOverlay() {
 	dummyDiv.classList.remove("blur_effect");
 	document.getElementById("overlay_edit").classList.remove("overlay_open");
-	document.getElementById("note_edit_title").value = "";
 }
 function closeOverlay() {
 	overlay.classList.remove("overlay_open");
@@ -42,6 +41,7 @@ if (number != 0) {
 		checkBox.className = "checkbox";
 		noteInfo.className = "note_info";
 		titleFinal.className = "title";
+		titleFinal.id = "title";
 		editButton.className = "edit";
 		deleteButton.className = "delete";
 		deletefa.classList.add("fas", "fa-trash");
@@ -58,6 +58,23 @@ if (number != 0) {
 		//Giving their text to them;
 		newNote.style.display = "flex";
 
+		/* This is the dom that is constructed
+			<div class="notes_container">
+			<div class="box">
+				<div class="checkbox"></div>
+				<div class="note_info">
+					<div class="title" id="title"></div>
+					<div class="edit">
+						<i class="fas fa-edit"></i>
+					</div>
+					<div class="delete">
+						<i class="fas fa-trash"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+		 */
+
 		titleFinal.textContent = localStorage.getItem(localStorage.key(i));
 
 		var container = document.getElementsByClassName("notes_container")[0];
@@ -73,28 +90,24 @@ if (number != 0) {
 		});
 
 		editButton.addEventListener("click", function () {
-			let unchangedText = document.getElementById(idNumber).innerText;
+			unchangedText = localStorage.getItem(idNumber);
 			startEditOverlay();
-			let editOverlayTextColumn =
-				document.getElementById("note_edit_title");
-			editOverlayTextColumn.value = unchangedText;
+			document.getElementById("note_edit_title").value = unchangedText;
 
-			var doneButton = document.getElementById("edit_btn");
-			doneButton.addEventListener("click", function () {
-				var changedText = editOverlayTextColumn.value;
-
-				changedText = editOverlayTextColumn.value;
-				if (changedText == "") {
-					alert("Title cannot be null");
-					return;
-				}
-				console.log(unchangedText + " " + changedText);
-				document.getElementById(
-					idNumber
-				).children[1].children[0].textContent = changedText;
-				localStorage.setItem(idNumber, changedText);
-				closeEditOverlay();
-			});
+			document
+				.getElementById("edit_btn")
+				.addEventListener("click", function () {
+					if (
+						document.getElementById("note_edit_title").value === ""
+					) {
+						return alert("Aarya is a bad boy");
+					}
+					localStorage.setItem(
+						idNumber,
+						document.getElementById("note_edit_title").value
+					);
+					location.reload();
+				});
 		});
 	}
 }
@@ -159,27 +172,22 @@ function addNewNote() {
 	});
 
 	editButton.addEventListener("click", function () {
-		let unchangedText = document.getElementById(randint).innerText;
+		unchangedText = localStorage.getItem(randint);
 		startEditOverlay();
-		let editOverlayTextColumn = document.getElementById("note_edit_title");
-		editOverlayTextColumn.value = unchangedText;
+		document.getElementById("note_edit_title").value = unchangedText;
 
-		var doneButton = document.getElementById("edit_btn");
-		doneButton.addEventListener("click", function () {
-			var changedText = editOverlayTextColumn.value;
-
-			changedText = editOverlayTextColumn.value;
-			if (changedText == "") {
-				alert("Title cannot be null");
-				return;
-			}
-			console.log(unchangedText + " " + changedText);
-			document.getElementById(
-				randint
-			).children[1].children[0].textContent = changedText;
-			localStorage.setItem(randint, changedText);
-			closeEditOverlay();
-		});
+		document
+			.getElementById("edit_btn")
+			.addEventListener("click", function () {
+				if (document.getElementById("note_edit_title").value === "") {
+					return alert("Aarya is a bad boy");
+				}
+				localStorage.setItem(
+					randint,
+					document.getElementById("note_edit_title").value
+				);
+				location.reload();
+			});
 	});
 
 	document.getElementById("note_title").value = "";

@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 16px;
+	--background-color: #1a1a1d;
+	--contrast: #c3073f;
+	--contrastDarker: #950740;
+	--font: #c3073f;
+	--greyish: #4e4e50;
+}
+
+body {
+	background-color: var(--background-color);
+}
+
+.head {
+	margin: 10px 20px;
+	display: flex;
+	flex-direction: column;
+}
+
+.h {
+	color: var(--font);
+	font-size: 4rem;
+	font-family: "Poppins", sans-serif;
+}
+
+.btns_for_visit {
+	margin: auto;
+	border-radius: 10px;
+	margin-top: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--contrast);
+	color: white;
+	font-family: monospace;
+	animation: btnAnimation ease infinite 3s;
+
+	text-decoration: none;
+}
+
+@keyframes btnAnimation {
+	0% {
+		width: 100px;
+		height: 30px;
+	}
+
+	25% {
+		width: 80px;
+		height: 35px;
+		background-color: var(--contrast);
+	}
+
+	50% {
+		width: 100px;
+		height: 40px;
+		background-color: var(--contrastDarker);
+	}
+
+	75% {
+		width: 80px;
+		height: 35px;
+		background-color: var(--background-color);
+	}
+
+	100% {
+		width: 100px;
+		height: 30px;
+	}
+}
+
+.btns_for_visit:hover {
+	background-color: var(--contrastDarker);
+	cursor: pointer;
+}

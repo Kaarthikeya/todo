@@ -1,112 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="splash.css" />
 		<meta charset="UTF-8" />
-		<script src="script.js" defer></script>
-
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>ListiFy! Never Forget!</title>
-		<script
-			src="https://kit.fontawesome.com/d29b7d0301.js"
-			crossorigin="anonymous"
-		></script>
+		<title>Welcome to listify.</title>
 	</head>
 	<body>
-		<!-- THis div is to blur the background on clicking the add button -->
-		<div id="dum"></div>
-		<!-- The title of and the offcial header of the website -->
-		<div class="title_container">listify.</div>
-
-		<!-- THis is the container 
-			for holding all
-			 the notes 
-			-->
-
-		<div class="notes_container">
-			<div class="box">
-				<div class="checkbox"></div>
-				<div class="note_info">
-					<div class="title" id="title"></div>
-					<div class="edit">
-						<i class="fas fa-edit"></i>
-					</div>
-					<div class="delete">
-						<i class="fas fa-trash"></i>
-					</div>
-				</div>
-			</div>
+		<div class="head">
+			<div class="h">Welcome</div>
+			<div class="h">To</div>
+			<div class="h">Listify.</div>
+			<div class="h">Never Forget.</div>
+			<div class="h">Ever Again.</div>
 		</div>
-
-		<!-- THe BUttons required to edit, 
-			delete and add the new 
-			overlays!!! -->
-		<div class="btns_for_action" onclick="startOverlay()">
-			<i class="fas fa-plus"></i>
-		</div>
-
-		<!-- This is the code for the 
-			
-			"New" 
-		
-			Overlay-->
-
-		<div class="overlay_add">
-			<div class="header">
-				<div id="add_a_new_note">Wanna add something?</div>
-			</div>
-			<!-- The form for submitting  -->
-			<div class="form_for_adding_new_notes">
-				<input
-					type="text"
-					id="note_title"
-					placeholder="Title"
-					maxlength="12"
-				/>
-				<div class="btns">
-					<div class="submit_button_for_form" onclick="addNewNote()">
-						Go!
-					</div>
-					<div
-						class="submit_button_for_form"
-						onclick="closeOverlay()"
-					>
-						Cancel
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- THis is the
-			 code for editing
-			  the overlay
-		 -->
-
-		<div class="overlay_add" id="overlay_edit">
-			<div class="header">
-				<div id="edit_a_new_note">Something Wrong?</div>
-			</div>
-			<!-- The form for submitting  -->
-			<div class="form_for_adding_new_notes">
-				<input
-					type="text"
-					id="note_edit_title"
-					maxlength="12"
-					placeholder="Title"
-				/>
-				<div class="btns">
-					<div class="submit_button_for_form" id="edit_btn">
-						Done!
-					</div>
-					<div
-						class="submit_button_for_form"
-						onclick="closeEditOverlay()"
-					>
-						Cancel
-					</div>
-				</div>
-			</div>
-		</div>
+		<a class="btns_for_visit" href="main.html">Visit</a>
 	</body>
 </html>
